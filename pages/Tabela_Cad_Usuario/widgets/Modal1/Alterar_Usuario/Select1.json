@@ -1,0 +1,61 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 26,
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "40vs1bzwbm",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Perfil Usuário:",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 31,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 94,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 87,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "originalBottomRow": 26,
+  "originalTopRow": 19,
+  "parentColumnSpace": 17.9375,
+  "parentId": "kz4h4pljyj",
+  "parentRowSpace": 10,
+  "placeholderText": "Selecione a opção",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 41,
+  "serverSideFiltering": false,
+  "sourceData": "[\n  {\n    \"name\": \"admin\",\n    \"code\": \"ADMIN\"\n  },\n  {\n    \"name\": \"causa_animal\",\n    \"code\": \"CAUSA_ANIMAL\"\n  },\n  {\n    \"name\": \"causa_autista\",\n    \"code\": \"CAUSA_AUTISTA\"\n  },\n  {\n    \"name\": \"causa_geral\",\n    \"code\": \"CAUSA_GERAL\"\n  },\n  {\n    \"name\": \"registrador\",\n    \"code\": \"REGISTRADOR\"\n  }\n]",
+  "topRow": 19,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "rj48sl1gwl",
+  "widgetName": "Select1"
+}

@@ -1,0 +1,63 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 6,
+  "bottomRowBeforeCollapse": 30,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{ regras_acesso.isBotaoBloqueado(['admin', 'causa_geral']) }}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "ssmltsd862",
+  "leftColumn": 12,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 13,
+  "mobileRightColumn": 29,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{navigateTo('Cadastro_Oficio_Geral', {}, 'SAME_WINDOW');}}",
+  "originalBottomRow": 24,
+  "originalTopRow": 20,
+  "parentColumnSpace": 17.9375,
+  "parentId": "4t71bxwlov",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 24,
+  "text": "Gerar_Oficio",
+  "topRow": 2,
+  "topRowBeforeCollapse": 26,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "ruyts00u6y",
+  "widgetName": "Button1Copy5Copy1"
+}

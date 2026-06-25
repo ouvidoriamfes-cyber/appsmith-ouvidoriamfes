@@ -1,0 +1,41 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 29,
+  "boxShadow": "none",
+  "defaultImage": "https://i.postimg.cc/SsRHTsLP/cachorro-removebg-preview.png",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableDownload": false,
+  "enableRotation": false,
+  "flexVerticalAlignment": "start",
+  "image": "",
+  "imageShape": "RECTANGLE",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "0rmgsf5f5d",
+  "leftColumn": 0,
+  "maxZoomLevel": 1,
+  "mobileBottomRow": 90,
+  "mobileLeftColumn": 8,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 78,
+  "needsErrorInfo": false,
+  "objectFit": "cover",
+  "originalBottomRow": 29,
+  "originalTopRow": 21,
+  "parentColumnSpace": 17.9375,
+  "parentId": "69kl31c6kp",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 5,
+  "topRow": 21,
+  "type": "IMAGE_WIDGET",
+  "version": 1,
+  "widgetId": "da64u2r98s",
+  "widgetName": "Image1"
+}

@@ -1,0 +1,52 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 82,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "aysze9gewm",
+  "leftColumn": 47,
+  "minWidth": 120,
+  "mobileBottomRow": 72,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 68,
+  "needsErrorInfo": false,
+  "onClick": "{{navigateTo('Tabela_Oficio_Autista', {}, 'SAME_WINDOW');}}",
+  "originalBottomRow": 82,
+  "originalTopRow": 78,
+  "parentColumnSpace": 17.625,
+  "parentId": "bpu2frq7j7",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 55,
+  "text": "Tabela de Ofícios",
+  "topRow": 78,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "60bueyen1e",
+  "widgetName": "Button1"
+}

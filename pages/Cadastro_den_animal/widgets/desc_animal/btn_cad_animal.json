@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 74,
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+  "buttonColor": "#22c55e",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "displayName": "Button",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
+  "isDefaultClickDisabled": true,
+  "isDeprecated": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "d80868s2dr",
+  "leftColumn": 24,
+  "onClick": "{{\n  (() => {\n    // 1. Valida se o número da denúncia foi preenchido\n    if (!n_denuncia_animal.text) {\n      return showAlert('Por favor, preencha o número da denúncia.', 'warning');\n    }\n    \n    // 2. Valida se o texto da denúncia foi preenchido\n    if (!Text_den_animal.text) {\n      return showAlert('Por favor, preencha a descrição/texto da denúncia.', 'warning');\n    }\n\n    // 3. Dispara o processo de salvamento\n    return fotos_animais.cadastrarComImagens()\n      .then(() => {\n        const camposParaLimpar = [\n          \"n_denuncia_animal\",\n          \"data_e_hora_denuncia\",\n          \"Data_Reg_Geral\",\n          \"Hora_Reg_Geral\",\n          \"Denunciante_animal\",\n          \"Agressor_animal\",\n          \"Testemunha_animal\",\n          \"Select_cidade\",\n          \"Resposta_Denunciante\",\n          \"Text_den_animal\",\n          \"telefone_animal\",\n          \"email_animal\",\n          \"classif_denun\"\n        ];\n\n        camposParaLimpar.forEach(async (campo) => {\n          try {\n            await resetWidget(campo, true);\n          } catch(e) {}\n        });\n\n        showAlert('Denúncia cadastrada e campos limpos com sucesso!', 'success');\n      })\n      .catch((err) => {\n        showAlert('Erro ao salvar as informações: ' + (err?.message || err), 'error');\n      });\n  })()\n}}\n",
+  "originalBottomRow": 74,
+  "originalTopRow": 70,
+  "parentColumnSpace": 18.1875,
+  "parentId": "bpu2frq7j7",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "rightColumn": 32,
+  "searchTags": [
+    "click",
+    "submit"
+  ],
+  "text": "Cadastrar",
+  "topRow": 70,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "ho01l3wvtz",
+  "widgetName": "btn_cad_animal"
+}

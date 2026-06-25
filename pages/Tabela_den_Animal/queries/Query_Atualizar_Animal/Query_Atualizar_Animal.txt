@@ -1,0 +1,20 @@
+UPDATE public."Cadastro_Animal"
+SET
+  "data_e_hora_denuncia" = $$ {{ Input_data_e_hora_denuncia.text }} $$,
+  "Telefone" = $$ {{ Telefone_animal.text }} $$,
+  "Email" = $$ {{ email_animal.text }} $$,
+  "Nome_Denunciante" = $$ {{ Denunciante_animal.text }} $$,
+  "Nome_Agressor" = $$ {{ Agressor_animal.text }} $$,
+  "Nome_Testemunha" = $$ {{ Testemunha_animal.text }} $$,
+  "Localizacao" = $$ {{ Localizacao_animal.text }} $$,
+  "Resposta_Denunciante" = $$ {{ Resposta_Denunciante_animal.text }} $$,
+  "data_reg_animal" = $$ {{ data_reg_animal.text }} $$,
+  "hora_reg_animal" = $$ {{ hora_reg_animal.text }} $$,
+  "classificacao" = $$ {{ classificacao.text }} $$,
+  "Descricao" = $$ {{ (() => {
+  let t = Text_den_animal.text.replace(/<\/?[^>]+(>|$)/g, "");
+  const m = { '&Ccedil;':'Ç','&ccedil;':'ç','&Atilde;':'Ã','&atilde;':'ã','&Otilde;':'Õ','&otilde;':'õ','&Aacute;':'Á','&aacute;':'á','&Eacute;':'É','&eacute;':'é','&Iacute;':'Í','&iacute;':'í','&Oacute;':'Ó','&oacute;':'ó','&Uacute;':'Ú','&uacute;':'ú','&Acirc;':'Â','&acirc;':'â','&Ecirc;':'Ê','&ecirc;':'ê','&Ocirc;':'Ô','&ocirc;':'ô','&nbsp;':' ' };
+  return t.replace(/&[A-Za-z]+;/g, match => m[match] || match);
+})() }} $$
+
+WHERE "Num_Denuncia" = {{ select_altera_cad_animal.selectedOptionValue }};

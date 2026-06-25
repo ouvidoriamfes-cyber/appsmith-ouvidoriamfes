@@ -1,0 +1,27 @@
+UPDATE public."Cadastro_Autista"
+SET
+  "data_e_hora_denuncia_Autista" = $$ {{ Input_data_e_hora_denuncia.text }} $$,
+  "Telefone_Autista" = $$ {{ Telefone_Autista.text }} $$,
+  "Email_Autista" = $$ {{ Email_Autista.text }} $$,
+  "Nome_Denunciante_Autista" = $$ {{ Nome_Denunciante_Autista.text }} $$,
+  "Nome_Agressor_Autista" = $$ {{ Nome_Agressor_Autista.text }} $$,
+  "Nome_Testemunha_Autista" = $$ {{ Nome_Testemunha_Autista.text }} $$,
+  "Localizacao_Autista" = $$ {{ Localizacao_Autista.text }} $$,
+  "Resposta_Denunciante_Autista" = $$ {{ Resposta_Denunciante_Autista.text }} $$,
+  "data_reg_Autista" = $$ {{ data_reg_Autista.text }} $$,
+  "hora_reg_Autista" = $$ {{ hora_reg_Autista.text }} $$,
+  "classificacao_Autista" = $$ {{ classificacao_Autista.text }} $$,
+  "Descricao_Autista" = $$ {{ (() => {
+  let t = Descricao_Autista.text.replace(/<\/?[^>]+(>|$)/g, "");
+  const m = { 
+    '&Ccedil;':'Ç','&ccedil;':'ç','&Atilde;':'Ã','&atilde;':'ã',
+    '&Otilde;':'Õ','&otilde;':'õ','&Aacute;':'Á','&aacute;':'á',
+    '&Eacute;':'É','&eacute;':'é','&Iacute;':'Í','&iacute;':'í',
+    '&Oacute;':'Ó','&oacute;':'ó','&Uacute;':'Ú','&uacute;':'ú',
+    '&Acirc;':'Â','&acirc;':'â','&Ecirc;':'Ê','&ecirc;':'ê',
+    '&Ocirc;':'Ô','&ocirc;':'ô','&nbsp;':' ' 
+  };
+  return t.replace(/&[A-Za-z]+;/g, match => m[match] || match);
+})() }} $$
+
+WHERE "Num_Denuncia_Autista" = {{ select_altera_cad_Autista.selectedOptionValue }};

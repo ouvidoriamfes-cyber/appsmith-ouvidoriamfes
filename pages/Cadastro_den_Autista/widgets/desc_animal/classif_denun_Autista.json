@@ -1,0 +1,61 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 33,
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "40vs1bzwbm",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Classificação:",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 11,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 94,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 87,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "name",
+  "originalBottomRow": 33,
+  "originalTopRow": 26,
+  "parentColumnSpace": 17.9375,
+  "parentId": "bpu2frq7j7",
+  "parentRowSpace": 10,
+  "placeholderText": "Selecione a opção",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 22,
+  "serverSideFiltering": false,
+  "sourceData": "[\n  { \"name\": \"Maus Tratos\", \"code\": \"MAUS_TRATOS\" },\n  { \"name\": \"Abandono\", \"code\": \"ABANDONO\" },\n  { \"name\": \"Acidente\", \"code\": \"ACIDENTE\" },\n  { \"name\": \"Agressão\", \"code\": \"AGRESSAO\" },\n  { \"name\": \"Envenenamento\", \"code\": \"ENVENENAMENTO\" },\n  { \"name\": \"Assassinato\", \"code\": \"ASSASSINATO\" },\n  { \"name\": \"Outros\", \"code\": \"OUTROS\" }\n]",
+  "topRow": 26,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sw6vzvv979",
+  "widgetName": "classif_denun_Autista"
+}

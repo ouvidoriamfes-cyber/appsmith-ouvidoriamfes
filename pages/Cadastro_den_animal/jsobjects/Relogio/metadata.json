@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6a1b16bf9b1e98311441a58d_07d2a649-88cf-4742-a05c-1508f5913271",
+  "id": "Cadastro_den_animal_Relogio",
+  "unpublishedCollection": {
+    "name": "Relogio",
+    "pageId": "Cadastro_den_animal",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "horaAtual",
+        "value": "\"13:11\""
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+INSERT INTO public."Oficio_Geral" (
+    "Oficio_geral_n_denuncia",
+    "Oficio_geral_n_Oficio",
+    "Oficio_geral_data_e_hora_denuncia",
+    "Oficio_geral_Identificacao",
+    "Oficio_geral_Classificacao",
+    "Telefone_Oficio_geral",
+    "Oficio_geral_email",
+    "Oficio_geral_Denunciante",
+    "Oficio_geral_Agressor",
+    "Oficio_geral_Testemunha",
+    "Oficio_geral_Local",
+    "Oficio_Text_den_geral",
+    "Oficio_txt_Causa_Geral",    -- Adicionado na lista de colunas
+    "Oficio_imagem_geral",       -- Adicionado na lista de colunas
+    "Oficio_geral_data_reg",
+    "Oficio_hora_reg_geral",
+    "oficio_geral_situacao",
+    "Oficio_geral_Instituicao",
+    "Destinatario_geral",
+    "dia_cadastro_geral",
+    "mes_cadastro_geral",
+    "dia_denuncia_geral",
+    "mes_denuncia_geral"
+) VALUES (
+    {{ Oficio_Select_num_denu_geral.selectedOptionValue ? Number(Oficio_Select_num_denu_geral.selectedOptionValue) : null }},
+    {{ n_oficio_geral.text ? "'" + n_oficio_geral.text + "'" : null }},
+    '{{ data_e_hora_denuncia_geral.text }}',
+    {{ Oficio_Ident_geral.text ? "'" + Oficio_Ident_geral.text + "'" : null }},
+    {{ Oficio_Classificacao_geral.text ? "'" + Oficio_Classificacao_geral.text + "'" : null }},
+    {{ Telefone_Oficio_geral.text ? "'" + Telefone_Oficio_geral.text + "'" : null }},
+    {{ Oficio_email_geral.text ? "'" + Oficio_email_geral.text + "'" : null }},
+    {{ Oficio_Denunciante_geral.text ? "'" + Oficio_Denunciante_geral.text + "'" : null }},
+    {{ Oficio_Agressor_geral.text ? "'" + Oficio_Agressor_geral.text + "'" : null }},
+    {{ Oficio_Testemunha_geral.text ? "'" + Oficio_Testemunha_geral.text + "'" : null }},
+    '{{ Oficio_Local_geral.text }}',
+    {{ Oficio_Text_den_geral.text ? "'" + Oficio_Text_den_geral.text.replace(/<\/?[^>]+(>|$)/g, "") + "'" : null }},
+    {{ Oficio_txt_Causa_Geral.text ? "'" + Oficio_txt_Causa_Geral.text.replace(/<\/?[^>]+(>|$)/g, "") + "'" : null }}, -- Texto limpo da causa geral
+    {{ Oficio_imagem_geral.text ? "'" + Oficio_imagem_geral.text + "'" : null }}, -- Link/texto da imagem geral
+    '{{ Oficio_geral_data_reg.text }}',
+    '{{ Oficio_hora_reg_geral.text }}',
+    '{{ Oficio_situacao_geral.text }}',
+    {{ Oficio_Instituicao_geral.selectedOptionValue ? "'" + Oficio_Instituicao_geral.selectedOptionValue + "'" : null }}, 
+    '{{ Oficio_destinatario_geral.text }}',
+    
+    -- Código para o DIA do cadastro geral (com proteção para valor nulo)
+    {{ Oficio_geral_data_reg.text ? moment(Oficio_geral_data_reg.text, 'DD/MM/YYYY').date() : null }},
+    
+    -- Código para o MÊS do cadastro geral (com proteção para valor nulo)
+    {{ Oficio_geral_data_reg.text ? "'" + ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][moment(Oficio_geral_data_reg.text, 'DD/MM/YYYY').month()] + "'" : null }},
+
+    -- DIA DA DENÚNCIA GERAL (baseado em Oficio_geral_data_reg)
+    {{ Oficio_geral_data_reg.text ? moment(Oficio_geral_data_reg.text, 'DD/MM/YYYY').date() : null }},
+    
+    -- MÊS DA DENÚNCIA GERAL (baseado em Oficio_geral_data_reg)
+    CASE 
+        WHEN {{ !Oficio_geral_data_reg.text }} THEN NULL 
+        ELSE '{{ ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][moment(Oficio_geral_data_reg.text, 'DD/MM/YYYY').month()] }}'
+    END
+);

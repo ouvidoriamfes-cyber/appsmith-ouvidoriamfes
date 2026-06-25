@@ -1,0 +1,54 @@
+INSERT INTO public."Oficio_Animal" (
+    "Oficio_n_denuncia",
+    "Oficio_n_Oficio",
+    "Oficio_data_e_hora_denuncia",
+    "Oficio_Identificacao",
+    "Oficio_Classificacao",
+    "Telefone_Oficio",
+    "Oficio_Instituicao",     
+    "Oficio_email_animal",
+    "Oficio_Denunciante_animal",
+    "Oficio_Agressor_animal",
+    "Oficio_Testemunha_animal",
+    "Oficio_Local_Animal",
+    "Oficio_Text_den_animal",
+    "Oficio_data_reg_animal",
+    "Oficio_hora_reg_animal",
+    "Destinatario",
+    "oficio_situacao",
+    "dia_cadastro",      
+    "mes_cadastro",       
+    "dia_denuncia",
+    "mes_denuncia",
+    "Oficio_txt_Causa_Animal", -- 📝 Coluna que recebe o texto limpo do editor da imagem
+    "Oficio_imagem_animal"     -- Adicionado na lista de colunas
+) VALUES (
+    {{ Oficio_Select_num_denun.selectedOptionValue ? Number(Oficio_Select_num_denun.selectedOptionValue) : null }},
+    {{ n_oficio.text ? "'" + n_oficio.text + "'" : null }},
+    '{{ data_e_hora_denuncia_animal.text }}',
+    {{ Oficio_Ident.text ? "'" + Oficio_Ident.text + "'" : null }},
+    {{ Oficio_Classificacao.text ? "'" + Oficio_Classificacao.text + "'" : null }},
+    {{ Telefone_Oficio.text ? "'" + Telefone_Oficio.text + "'" : null }},
+    {{ Oficio_Instituicao.selectedOptionValue ? "'" + Oficio_Instituicao.selectedOptionValue + "'" : null }}, 
+    {{ Oficio_email_animal.text ? "'" + Oficio_email_animal.text + "'" : null }},
+    {{ Oficio_Denunciante_animal.text ? "'" + Oficio_Denunciante_animal.text + "'" : null }},
+    {{ Oficio_Agressor_animal.text ? "'" + Oficio_Agressor_animal.text + "'" : null }},
+    {{ Oficio_Testemunha_animal.text ? "'" + Oficio_Testemunha_animal.text + "'" : null }},
+    '{{ Oficio_Local_Animal.text }}',
+    {{ Oficio_Text_den_animal.text ? "'" + Oficio_Text_den_animal.text.replace(/<\/?[^>]+(>|$)/g, "") + "'" : null }},
+    '{{ Oficio_data_reg_animal.text }}',
+    '{{ Oficio_hora_reg_animal.text }}',
+    '{{ Oficio_destinatario.text }}',
+    '{{ Oficio_situacao.text }}',
+    {{ moment(Oficio_data_reg_animal.text, 'DD/MM/YYYY').date() }},
+    {{ "'" + ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][moment(Oficio_data_reg_animal.text, 'DD/MM/YYYY').month()] + "'" }},
+    {{ data_reg_denuncia.text ? moment(data_reg_denuncia.text, 'DD/MM/YYYY').date() : null }},
+    CASE 
+        WHEN {{ !data_reg_denuncia.text }} THEN NULL 
+        ELSE '{{ ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][moment(data_reg_denuncia.text, 'DD/MM/YYYY').month()] }}'
+    END,
+    -- 🔄 Injetado o tratamento completo de HTML e acentuação gráfica para o componente 'Oficio_txt_Causa_Animal'
+    {{ Oficio_txt_Causa_Animal.text ? "'" + Oficio_txt_Causa_Animal.text.replace(/<\/?[^>]+(>|$)/g, "").replace(/&ccedil;/g, "ç").replace(/&atilde;/g, "ã").replace(/&otilde;/g, "õ").replace(/&eacute;/g, "é").replace(/&aacute;/g, "á").replace(/&iacute;/g, "í").replace(/&ó;/g, "ó").replace(/&uacute;/g, "ú").replace(/&Acirc;/g, "Â").replace(/&ecirc;/g, "ê").replace(/&nbsp;/g, " ") + "'" : null }},
+    -- 🔄 Inserido o mapeamento do campo de imagem correspondente
+    {{ Oficio_imagem_animal.text ? "'" + Oficio_imagem_animal.text + "'" : null }}
+);

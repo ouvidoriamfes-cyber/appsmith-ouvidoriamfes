@@ -1,0 +1,15 @@
+UPDATE public."Cadastro_Animal"
+SET
+  "data_e_hora_denuncia" = $$ {{ Input_data_e_hora_denuncia.text }} $$,
+  "Telefone" = $$ {{ Telefone_animal.text }} $$,
+  "Email" = $$ {{ email_animal.text }} $$,
+  "Nome_Denunciante" = $$ {{ Denunciante_animal.text }} $$,
+  "Nome_Agressor" = $$ {{ Agressor_animal.text }} $$,
+  "Nome_Testemunha" = $$ {{ Testemunha_animal.text }} $$,
+  "Localizacao" = $$ {{ Localizacao_animal.text }} $$,
+  "Resposta_Denunciante" = $$ {{ Resposta_Denunciante_animal.text }} $$,
+  "data_reg_animal" = $$ {{ data_reg_animal.text }} $$,
+  "hora_reg_animal" = $$ {{ hora_reg_animal.text }} $$,
+  "classificacao" = $$ {{ classificacao.text }} $$,
+  "Descricao" = $$ {{ Text_den_animal.text }} $$
+WHERE "Num_Denuncia" = {{ select_altera_cad_animal.selectedOptionValue }};

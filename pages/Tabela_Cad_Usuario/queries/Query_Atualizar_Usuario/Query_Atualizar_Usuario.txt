@@ -1,0 +1,6 @@
+UPDATE public."Acesso Login e Senha" SET
+    "Login" = {{ Tab_Cad_Usuario.updatedRow.Login || Tab_Cad_Usuario.selectedRow.Login }},
+    "Senha" = {{ Tab_Cad_Usuario.updatedRow.Senha || Tab_Cad_Usuario.selectedRow.Senha }},
+    "Perfil" = {{ Tab_Cad_Usuario.updatedRow.Perfil || Tab_Cad_Usuario.selectedRow.Perfil }},
+    "Email_rec_senha" = {{ Tab_Cad_Usuario.updatedRow.Email_rec_senha || Tab_Cad_Usuario.selectedRow.Email_rec_senha }}
+WHERE "id" = {{ Number(Tab_Cad_Usuario.selectedRow.id) }};

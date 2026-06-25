@@ -1,0 +1,58 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 56,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "displayName": "Button",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
+  "isDefaultClickDisabled": true,
+  "isDeprecated": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "d80868s2dr",
+  "leftColumn": 0,
+  "onClick": "{{\n  (() => {\n    // Executa a query injetando os parâmetros de forma isolada e segura\n    Query_Atualizar_Geral.run({\n      data_e_hora_denuncia: Input_data_e_hora_denuncia.text,\n      Telefone: Telefone_animal.text,\n      Email: email_animal.text,\n      Nome_Denunciante: Denunciante_animal.text,\n      Nome_Agressor: Agressor_animal.text,\n      Nome_Testemunha: Testemunha_animal.text,\n      Localizacao: Localizacao_animal.text,\n      Resposta_Denunciante: Resposta_Denunciante_animal.text,\n      data_reg_animal: data_reg_animal.text,\n      hora_reg_animal: hora_reg_animal.text,\n      classificacao: classificacao.text,\n      Descricao: Text_den_animal.text,\n      Num_Denuncia: select_altera_cad_animal.selectedOptionValue\n    })\n    .then(() => {\n      // Recarrega as duas queries do seu banco para atualizar a tela\n      Tabela_Cad_Animal.run(); \n      Query_Buscar_Denuncia.run();\n      \n      // Alerta de sucesso\n      showAlert('Alterações salvas com sucesso!', 'success');\n\n      // Lista de campos para limpar\n      const camposDoModal = [\n        \"Input_data_e_hora_denuncia\",\n        \"Telefone_animal\",\n        \"email_animal\",\n        \"Denunciante_animal\",\n        \"Agressor_animal\",\n        \"Testemunha_animal\",\n        \"Localizacao_animal\",\n        \"Resposta_Denunciante_animal\",\n        \"data_reg_animal\",\n        \"hora_reg_animal\",\n        \"classificacao\",\n        \"Text_den_animal\"\n      ];\n\n      // Executa a limpeza individual de forma assíncrona\n      camposDoModal.forEach(async (campo) => {\n        await resetWidget(campo, true);\n      });\n\n      // Fecha o modal de edição automaticamente\n      closeModal(\"Modal_Editar_Cad_Animal\");\n    })\n    .catch((err) => {\n      showAlert('Erro ao processar atualizações: ' + err.message, 'error');\n    });\n  })()\n}}",
+  "originalBottomRow": 70,
+  "originalTopRow": 66,
+  "parentColumnSpace": 18.1875,
+  "parentId": "va1ky01w71",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "rightColumn": 10,
+  "searchTags": [
+    "click",
+    "submit"
+  ],
+  "text": "Salvar Alteração",
+  "topRow": 52,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "qocgx56jrk",
+  "widgetName": "btn_auterar_cad_animal"
+}

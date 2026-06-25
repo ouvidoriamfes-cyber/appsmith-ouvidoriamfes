@@ -1,0 +1,11 @@
+INSERT INTO public."Acesso Login e Senha" (
+    "Login",
+    "Senha",
+    "Perfil",
+    "Email_rec_senha"
+) VALUES (
+    {{ login_usuario.text }},
+    {{ senha_usuario.text }},
+    {{ perfil_usuario.selectedOptionValue }},
+    {{ email_usuario.text }}
+);

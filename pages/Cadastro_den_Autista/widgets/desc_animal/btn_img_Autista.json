@@ -1,0 +1,56 @@
+{
+  "allowedFileTypes": [
+    "image/jpeg",
+    ".png",
+    "text/*",
+    "image/*",
+    "*"
+  ],
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 74,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "dynamicTyping": true,
+  "fileDataType": "Base64",
+  "files": [],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "by1bhn1gi3",
+  "label": "Adicionar Imagem",
+  "leftColumn": 52,
+  "maxFileSize": 5,
+  "maxNumFiles": "4",
+  "minWidth": 120,
+  "mobileBottomRow": 81,
+  "mobileLeftColumn": 25,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 77,
+  "needsErrorInfo": false,
+  "originalBottomRow": 74,
+  "originalTopRow": 70,
+  "parentColumnSpace": 17.064453125,
+  "parentId": "bpu2frq7j7",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 62,
+  "selectedFiles": [],
+  "topRow": 70,
+  "type": "FILE_PICKER_WIDGET_V2",
+  "version": 1,
+  "widgetId": "hsa3s8q6ro",
+  "widgetName": "btn_img_Autista"
+}

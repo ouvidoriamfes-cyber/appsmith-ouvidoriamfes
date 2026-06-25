@@ -1,0 +1,59 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 57,
+  "boxShadow": "none",
+  "defaultText": "{{ Tabela_Cadastro_Autista.data.find(row => row.Num_Denuncia_Autista?.toString() == Oficio_Select_num_denu_geral.selectedOptionValue?.toString())?.Foto_URL_Autista || \"\" }}\n",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "37xn421p30",
+  "label": "Imagem:",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 58,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 51,
+  "needsErrorInfo": false,
+  "originalBottomRow": 57,
+  "originalTopRow": 50,
+  "parentColumnSpace": 17.625,
+  "parentId": "bpu2frq7j7",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 16,
+  "showStepArrows": false,
+  "topRow": 50,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "503ovtoy27",
+  "widgetName": "Oficio_imagem_geral"
+}

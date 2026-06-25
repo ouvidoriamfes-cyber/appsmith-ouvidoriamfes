@@ -1,0 +1,41 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "boxShadow": "none",
+  "defaultImage": "https://i.postimg.cc/LsQxgtqG/sessao-02-removebg-preview-removebg-preview.png",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableDownload": false,
+  "enableRotation": false,
+  "flexVerticalAlignment": "start",
+  "image": "",
+  "imageShape": "RECTANGLE",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "0rmgsf5f5d",
+  "leftColumn": 1,
+  "maxZoomLevel": 1,
+  "mobileBottomRow": 90,
+  "mobileLeftColumn": 8,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 78,
+  "needsErrorInfo": false,
+  "objectFit": "contain",
+  "originalBottomRow": 73,
+  "originalTopRow": 65,
+  "parentColumnSpace": 17.9375,
+  "parentId": "7h0jhdtbxx",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 11,
+  "topRow": 0,
+  "type": "IMAGE_WIDGET",
+  "version": 1,
+  "widgetId": "vnihg2pem8",
+  "widgetName": "Image1CopyCopyCopy"
+}

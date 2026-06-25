@@ -1,0 +1,14 @@
+SELECT 
+    Num_Denuncia,
+    Data_Denuncia,
+    Hora_Denuncia,
+    telefone,
+    Email,
+    Nome_Denunciante,
+    Nome_Agressor,
+    Nome_Testemunha,
+    Localização,
+    Resposta_Denunciante,
+    Descricao
+FROM publico."Cadastro_Animal"
+WHERE Num_Denuncia = {{ select_altera_cad_animal.selectedOptionValue }};

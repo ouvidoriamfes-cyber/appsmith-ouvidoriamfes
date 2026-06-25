@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6a1b16bf9b1e98311441a58d_1d53ba16-3b26-4dbf-98ae-7668bffd00c4",
+  "id": "Cadastro_Oficio_Autista_Relogio",
+  "unpublishedCollection": {
+    "name": "Relogio",
+    "pageId": "Cadastro_Oficio_Autista",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "horaAtual",
+        "value": "\"13:11\""
+      }
+    ]
+  }
+}

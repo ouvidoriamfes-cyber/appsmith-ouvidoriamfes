@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6a1b16bf9b1e98311441a58d_d780ab30-7f31-4766-8caf-dd2c076f176d",
+  "id": "Cadastro_Oficio_Geral_Relogio",
+  "unpublishedCollection": {
+    "name": "Relogio",
+    "pageId": "Cadastro_Oficio_Geral",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "horaAtual",
+        "value": "\"13:11\""
+      }
+    ]
+  }
+}

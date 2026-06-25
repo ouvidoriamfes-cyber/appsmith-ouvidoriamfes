@@ -1,0 +1,4 @@
+SELECT "Num_Denuncia_Geral" 
+FROM "Cadastro_Geral" 
+ORDER BY "Num_Denuncia_Geral" DESC -- Substitua 'id' pelo nome da sua coluna de ID ou Data
+LIMIT 1;

@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6a1b16bf9b1e98311441a58d_cd6e8463-e895-48db-872d-b93c740c4abe",
+  "id": "Cadastro_den_Geral_Relogio",
+  "unpublishedCollection": {
+    "name": "Relogio",
+    "pageId": "Cadastro_den_Geral",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "horaAtual",
+        "value": "\"13:11\""
+      }
+    ]
+  }
+}

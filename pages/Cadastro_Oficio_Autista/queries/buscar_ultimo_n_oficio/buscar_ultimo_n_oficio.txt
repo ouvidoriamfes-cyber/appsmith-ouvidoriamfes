@@ -1,0 +1,4 @@
+SELECT "Oficio_autista_n_Oficio" 
+FROM "Oficio_Autista" 
+ORDER BY "Oficio_autista_n_Oficio" DESC -- Substitua 'id' pelo nome da sua coluna de ID ou Data
+LIMIT 1;

@@ -1,0 +1,37 @@
+UPDATE public."Cadastro_Geral"
+SET
+  "data_e_hora_denuncia_Geral" = $$ {{ Input_data_e_hora_denuncia.text }} $$,
+  "Data_Reg_Geral" = $$ {{ data_reg_Geral.text }} $$,
+  "Hora_Reg_Geral" = $$ {{ hora_reg_Geral.text }} $$,
+  "Nome_Denunciante_Geral" = $$ {{ Nome_Denunciante_Geral.text }} $$,
+  "Nome_Agressor_Geral" = $$ {{ Nome_Agressor_Geral.text }} $$,
+  "Nome_Testemunha_Geral" = $$ {{ Nome_Testemunha_Geral.text }} $$,
+  "Localizacao_Geral" = $$ {{ Localizacao_Geral.text }} $$,
+  "Resposta_Denunciante_Geral" = $$ {{ Resposta_Denunciante_Geral.text }} $$,
+  "telefone_Geral" = $$ {{ telefone_Geral.text }} $$,
+  "email_Geral" = $$ {{ email_Geral.text }} $$,
+  "Classificacao_Geral" = $$ {{ Classificacao_Geral.text }} $$,
+  "Foto_URL_Geral" = $$ {{ Foto_URL_Geral.text }} $$,
+  "situacao_Geral" = $$ {{ situacao_Geral.text }} $$,
+  
+  -- Campos dinâmicos baseados na data de registro utilizando moment.js
+  "dia_cadastro_Geral" = {{ data_reg_Geral.text ? moment(data_reg_Geral.text, 'DD/MM/YYYY').date() : null }},
+  "mes_cadastro_Geral" = {{ data_reg_Geral.text ? "'" + ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][moment(data_reg_Geral.text, 'DD/MM/YYYY').month()] + "'" : null }},
+  "dia_denuncia_Geral" = {{ data_reg_Geral.text ? moment(data_reg_Geral.text, 'DD/MM/YYYY').date() : null }},
+  "mes_denuncia_Geral" = {{ data_reg_Geral.text ? "'" + ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][moment(data_reg_Geral.text, 'DD/MM/YYYY').month()] + "'" : null }},
+  
+  -- Tratamento do editor de texto para remover <p> e corrigir pontuação
+  "Descricao_Geral" = $$ {{ (() => {
+  let t = Descricao_Geral.text.replace(/<\/?[^>]+(>|$)/g, "");
+  const m = { 
+    '&Ccedil;':'Ç','&ccedil;':'ç','&Atilde;':'Ã','&atilde;':'ã',
+    '&Otilde;':'Õ','&otilde;':'õ','&Aacute;':'Á','&aacute;':'á',
+    '&Eacute;':'É','&eacute;':'é','&Iacute;':'Í','&iacute;':'í',
+    '&Oacute;':'Ó','&oacute;':'ó','&Uacute;':'Ú','&uacute;':'ú',
+    '&Acirc;':'Â','&acirc;':'â','&Ecirc;':'Ê','&ecirc;':'ê',
+    '&Ocirc;':'Ô','&ocirc;':'ô','&nbsp;':' ' 
+  };
+  return t.replace(/&[A-Za-z]+;/g, match => m[match] || match);
+})() }} $$
+
+WHERE "Num_Denuncia_Geral" = {{ select_altera_cad_Geral.selectedOptionValue }};

@@ -1,0 +1,1 @@
+SELECT COUNT(*) from public.Cadastro_Animal where Data_Denuncia ilike '%{{Tab_Cad_Den_Geral.searchText}}%';

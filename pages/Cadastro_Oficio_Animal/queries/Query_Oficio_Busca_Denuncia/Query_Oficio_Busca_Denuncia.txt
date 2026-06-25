@@ -1,0 +1,19 @@
+SELECT 
+    --NOMES REFERENTES A PLANILHA SUPABASE
+    "Num_Denuncia",
+    "data_e_hora_denuncia",
+    "Telefone",
+    "Email",
+    "Nome_Denunciante",
+    "Nome_Agressor",
+    "Nome_Testemunha",
+    "Localizacao",
+    "Resposta_Denunciante",
+    "Descricao",
+    "data_reg_animal",
+    "hora_reg_animal",
+    "classificacao",
+		"Foto_URL",
+		"situacao"
+FROM public."Cadastro_Animal"
+WHERE "Num_Denuncia" = {{ Oficio_Select_num_denun.selectedOptionValue }};

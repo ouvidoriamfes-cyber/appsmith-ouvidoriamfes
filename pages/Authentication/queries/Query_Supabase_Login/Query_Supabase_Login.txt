@@ -1,0 +1,3 @@
+SELECT * FROM public."Acesso Login e Senha" 
+WHERE "Login" = {{log_email.text}} 
+AND "Senha" = {{senha_password.text}};

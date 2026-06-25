@@ -1,0 +1,10 @@
+SELECT
+  *
+FROM
+  public.Cadastro_Animal
+ORDER BY
+  "{{Tab_Cad_Den_Geral.sortOrder.column || 'id'}}" {{Tab_Cad_Den_Geral.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{Tab_Cad_Den_Geral.pageSize}}
+OFFSET
+  {{Tab_Cad_Den_Geral.pageOffset}}

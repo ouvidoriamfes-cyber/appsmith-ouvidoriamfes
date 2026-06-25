@@ -1,0 +1,70 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 10,
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  Tabela_Cad_Geral.data[Tabela_Cad_Geral.data.length - 1]?.Num_Denuncia_Autista ))(select_altera_cad_Autista.options, select_altera_cad_Autista.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "optionValue"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "40vs1bzwbm",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 94,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 87,
+  "needsErrorInfo": false,
+  "optionLabel": "Num_Denuncia_Autista",
+  "optionValue": "Num_Denuncia_Autista",
+  "originalBottomRow": 19,
+  "originalTopRow": 14,
+  "parentColumnSpace": 17.9375,
+  "parentId": "514m1t62pk",
+  "parentRowSpace": 10,
+  "placeholderText": "Selecione a opção",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 9,
+  "serverSideFiltering": false,
+  "sourceData": "{{ Tabela_Cad_Geral.data }}",
+  "topRow": 5,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "zwzl1nydf8",
+  "widgetName": "select_altera_cad_Autista"
+}

@@ -1,0 +1,19 @@
+SELECT 
+    -- NOMES EXATOS DA SUA TABELA CADASTRO AUTISTA
+    "Num_Denuncia_Autista",
+    "data_e_hora_denuncia_Autista",
+    "Telefone_Autista",
+    "Email_Autista",
+    "Nome_Denunciante_Autista",
+    "Nome_Agressor_Autista",
+    "Nome_Testemunha_Autista",
+    "Localizacao_Autista",
+    "Resposta_Denunciante_Autista",
+    "Descricao_Autista",
+    "data_reg_Autista",
+    "hora_reg_Autista",
+    "classificacao_Autista",
+    "Foto_URL_Autista",
+    "situacao_Autista"
+FROM public."Cadastro_Autista"
+WHERE "Num_Denuncia_Autista" = {{ Oficio_Select_num_denu_autista.selectedOptionValue }};

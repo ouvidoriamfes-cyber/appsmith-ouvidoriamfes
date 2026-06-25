@@ -1,0 +1,62 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 47,
+  "bottomRowBeforeCollapse": 30,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{ regras_acesso.isBotaoBloqueado(['admin', 'causa_animal']) }}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "ssmltsd862",
+  "leftColumn": 35,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 13,
+  "mobileRightColumn": 29,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{navigateTo('Tabela_Cad_Usuario', {}, 'SAME_WINDOW');}}",
+  "originalBottomRow": 47,
+  "originalTopRow": 43,
+  "parentColumnSpace": 17.9375,
+  "parentId": "bpu2frq7j7",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 48,
+  "text": "Banco de Cadastro",
+  "topRow": 43,
+  "topRowBeforeCollapse": 26,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "81xmbyffm5",
+  "widgetName": "acesso_bd_cadastro"
+}

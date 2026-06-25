@@ -1,0 +1,4 @@
+SELECT "Num_Denuncia_Autista" 
+FROM "Cadastro_Autista" 
+ORDER BY "Num_Denuncia_Autista" DESC -- Substitua 'id' pelo nome da sua coluna de ID ou Data
+LIMIT 1;

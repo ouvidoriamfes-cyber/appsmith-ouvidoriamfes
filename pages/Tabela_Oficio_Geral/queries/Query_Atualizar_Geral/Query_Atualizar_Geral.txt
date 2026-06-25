@@ -1,0 +1,43 @@
+UPDATE public."Oficio_Geral"
+SET
+  "Oficio_geral_n_denuncia" = {{ Oficio_Select_num_denu_geral.selectedOptionValue ? Number(Oficio_Select_num_denu_geral.selectedOptionValue) : null }},
+  "Oficio_geral_n_Oficio" = $$ {{ n_oficio_geral.text }} $$,
+  "Oficio_geral_data_e_hora_denuncia" = $$ {{ data_e_hora_denuncia_geral.text }} $$,
+  "Oficio_geral_Identificacao" = $$ {{ Oficio_Ident_geral.text }} $$,
+  "Oficio_geral_Classificacao" = $$ {{ Oficio_Classificacao_geral.text }} $$,
+  "Telefone_Oficio_geral" = $$ {{ Telefone_Oficio_geral.text }} $$,
+  "Oficio_geral_email" = $$ {{ Oficio_email_geral.text }} $$,
+  "Oficio_geral_Denunciante" = $$ {{ Oficio_Denunciante_geral.text }} $$,
+  "Oficio_geral_Agressor" = $$ {{ Oficio_Agressor_geral.text }} $$,
+  "Oficio_geral_Testemunha" = $$ {{ Oficio_Testemunha_geral.text }} $$,
+  "Oficio_geral_Local" = $$ {{ Oficio_Local_geral.text }} $$,
+  "Oficio_geral_data_reg" = $$ {{ Oficio_geral_data_reg.text }} $$,
+  "Oficio_hora_reg_geral" = $$ {{ Oficio_hora_reg_geral.text }} $$,
+  "oficio_geral_situacao" = $$ {{ Oficio_situacao_geral.text }} $$,
+  "Oficio_geral_Instituicao" = $$ {{ Oficio_Instituicao_geral.selectedOptionValue }} $$,
+  "Destinatario_geral" = $$ {{ Oficio_destinatario_geral.text }} $$,
+  "Oficio_imagem_geral" = $$ {{ Oficio_imagem_geral.text }} $$,
+  "Oficio_txt_Causa_Geral" = $$ {{ Oficio_txt_Causa_Geral.text ? Oficio_txt_Causa_Geral.text.replace(/<\/?[^>]+(>|$)/g, "") : "" }} $$,
+  
+  -- Cálculo automático de datas usando moment.js com proteção para nulos
+  "dia_cadastro_geral" = {{ Oficio_geral_data_reg.text ? moment(Oficio_geral_data_reg.text, 'DD/MM/YYYY').date() : null }},
+  "mes_cadastro_geral" = {{ Oficio_geral_data_reg.text ? "'" + ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][moment(Oficio_geral_data_reg.text, 'DD/MM/YYYY').month()] + "'" : null }},
+  "dia_denuncia_geral" = {{ Oficio_geral_data_reg.text ? moment(Oficio_geral_data_reg.text, 'DD/MM/YYYY').date() : null }},
+  "mes_denuncia_geral" = {{ Oficio_geral_data_reg.text ? "'" + ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][moment(Oficio_geral_data_reg.text, 'DD/MM/YYYY').month()] + "'" : null }},
+
+  -- Limpeza de tags <p> e conversão completa de acentuação HTML no texto da descrição
+  "Oficio_Text_den_geral" = $$ {{ (() => {
+  if (!Oficio_Text_den_geral.text) return "";
+  let t = Oficio_Text_den_geral.text.replace(/<\/?[^>]+(>|$)/g, "");
+  const m = { 
+    '&Ccedil;':'Ç','&ccedil;':'ç','&Atilde;':'Ã','&atilde;':'ã',
+    '&Otilde;':'Õ','&otilde;':'õ','&Aacute;':'Á','&aacute;':'á',
+    '&Eacute;':'É','&eacute;':'é','&Iacute;':'Í','&iacute;':'í',
+    '&Oacute;':'Ó','&oacute;':'ó','&Uacute;':'Ú','&uacute;':'ú',
+    '&Acirc;':'Â','&acirc;':'â','&Ecirc;':'Ê','&ecirc;':'ê',
+    '&Ocirc;':'Ô','&ocirc;':'ô','&nbsp;':' ' 
+  };
+  return t.replace(/&[A-Za-z]+;/g, match => m[match] || match);
+})() }} $$
+
+WHERE "Oficio_geral_n_denuncia" = {{ select_altera_oficio_Geral.selectedOptionValue }};

@@ -1,0 +1,61 @@
+INSERT INTO public."Oficio_Autista" (
+    "Oficio_autista_n_denuncia",
+    "Oficio_autista_n_Oficio",
+    "Oficio_autista_data_e_hora_denuncia",
+    "Oficio_autista_Identificacao",
+    "Oficio_autista_Classificacao",
+    "Telefone_Oficio_autista",
+    "Oficio_autista_email",
+    "Oficio_autista_Denunciante",
+    "Oficio_autista_Agressor",
+    "Oficio_autista_Testemunha",
+    "Oficio_autista_Local",
+    "Oficio_Text_den_autista",
+    "Oficio_txt_Causa_Autista",
+    "Oficio_imagem_autista", -- Alterado para a coluna correta do autista
+    "Oficio_autista_data_reg",
+    "Oficio_hora_reg_autista",
+    "oficio_autista_situacao",
+    "Oficio_autista_Instituicao",
+    "Destinatario_autista",
+    "dia_cadastro_autista",
+    "mes_cadastro_autista",
+    "dia_denuncia_autista",
+    "mes_denuncia_autista"
+    
+) VALUES (
+    {{ Oficio_Select_num_denu_autista.selectedOptionValue ? Number(Oficio_Select_num_denu_autista.selectedOptionValue) : null }},
+    {{ n_oficio_autista.text ? "'" + n_oficio_autista.text + "'" : null }},
+    '{{ data_e_hora_denuncia_autista.text }}',
+    {{ Oficio_Ident_autista.text ? "'" + Oficio_Ident_autista.text + "'" : null }},
+    {{ Oficio_Classificacao_autista.text ? "'" + Oficio_Classificacao_autista.text + "'" : null }},
+    {{ Telefone_Oficio_autista.text ? "'" + Telefone_Oficio_autista.text + "'" : null }},
+    {{ Oficio_email_autista.text ? "'" + Oficio_email_autista.text + "'" : null }},
+    {{ Oficio_Denunciante_autista.text ? "'" + Oficio_Denunciante_autista.text + "'" : null }},
+    {{ Oficio_Agressor_autista.text ? "'" + Oficio_Agressor_autista.text + "'" : null }},
+    {{ Oficio_Testemunha_autista.text ? "'" + Oficio_Testemunha_autista.text + "'" : null }},
+    '{{ Oficio_Local_autista.text }}',
+    {{ Oficio_Text_den_autista.text ? "'" + Oficio_Text_den_autista.text.replace(/<\/?[^>]+(>|$)/g, "") + "'" : null }},
+    {{ Oficio_txt_Causa_Autista.text ? "'" + Oficio_txt_Causa_Autista.text.replace(/<\/?[^>]+(>|$)/g, "") + "'" : null }},
+    {{ Oficio_imagem_autista.text ? "'" + Oficio_imagem_autista.text + "'" : null }}, -- Mapeamento do componente alterado para autista
+    '{{ data_reg_denuncia_autista.text }}',
+    '{{ Oficio_hora_reg_autista.text }}',
+    '{{ Oficio_situacao_autista.text }}',
+    {{ Oficio_Instituicao_autista.selectedOptionValue ? "'" + Oficio_Instituicao_autista.selectedOptionValue + "'" : null }}, 
+    '{{ Oficio_destinatario_autista.text }}',
+    
+    -- Código para o DIA do cadastro (com proteção para valor nulo)
+    {{ data_reg_denuncia_autista.text ? moment(data_reg_denuncia_autista.text, 'DD/MM/YYYY').date() : null }},
+    
+    -- Código para o MÊS do cadastro (com proteção para valor nulo)
+    {{ data_reg_denuncia_autista.text ? "'" + ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][moment(data_reg_denuncia_autista.text, 'DD/MM/YYYY').month()] + "'" : null }},
+
+    -- DIA DA DENÚNCIA (baseado em data_reg_denuncia_autista)
+    {{ data_reg_denuncia_autista.text ? moment(data_reg_denuncia_autista.text, 'DD/MM/YYYY').date() : null }},
+    
+    -- MÊS DA DENÚNCIA (baseado em data_reg_denuncia_autista)
+    CASE 
+        WHEN {{ !data_reg_denuncia_autista.text }} THEN NULL 
+        ELSE '{{ ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][moment(data_reg_denuncia_autista.text, 'DD/MM/YYYY').month()] }}'
+    END
+);
