@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6a1b16bf9b1e98311441a58d_e4c84f56-7f25-42b2-8087-d3aaaf8513fa",
+  "id": "Dashboard_Gerenciador_de_graficos",
+  "unpublishedCollection": {
+    "name": "Gerenciador_de_graficos",
+    "pageId": "Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

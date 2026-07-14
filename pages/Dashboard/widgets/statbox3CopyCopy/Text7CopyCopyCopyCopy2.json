@@ -1,0 +1,44 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0px",
+  "bottomRow": 11,
+  "boxShadow": "none",
+  "displayName": "Text",
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "fontSize"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "System Default",
+  "fontSize": "1.8rem",
+  "fontStyle": "BOLD",
+  "hideCard": false,
+  "iconSVG": "/static/media/icon.97c59b52.svg",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "deco66gubs",
+  "labelTextSize": "0.875rem",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "overflow": "NONE",
+  "parentId": "qlz8gpal41",
+  "renderMode": "CANVAS",
+  "rightColumn": 36,
+  "text": "{{ JSObject1.formatarMausTratos() || '0' }}\n\n",
+  "textAlign": "LEFT",
+  "textColor": "#27272a",
+  "topRow": 5,
+  "truncateButtonColor": "#FFC13D",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "h9kyy7qjt6",
+  "widgetName": "Text7CopyCopyCopyCopy2"
+}

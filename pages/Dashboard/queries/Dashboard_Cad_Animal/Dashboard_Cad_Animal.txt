@@ -1,0 +1,1 @@
+SELECT classificacao FROM public."Cadastro_Animal";

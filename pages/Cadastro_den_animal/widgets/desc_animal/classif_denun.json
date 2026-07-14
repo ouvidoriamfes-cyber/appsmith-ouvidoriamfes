@@ -52,7 +52,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 22,
   "serverSideFiltering": false,
-  "sourceData": "[\n  { \"name\": \"Maus Tratos\", \"code\": \"MAUS_TRATOS\" },\n  { \"name\": \"Abandono\", \"code\": \"ABANDONO\" },\n  { \"name\": \"Acidente\", \"code\": \"ACIDENTE\" },\n  { \"name\": \"Agressão\", \"code\": \"AGRESSAO\" },\n  { \"name\": \"Envenenamento\", \"code\": \"ENVENENAMENTO\" },\n  { \"name\": \"Assassinato\", \"code\": \"ASSASSINATO\" },\n  { \"name\": \"Outros\", \"code\": \"OUTROS\" }\n]",
+  "sourceData": "[\n  { \"name\": \"Abandono\", \"code\": \"ABANDONO\" },\n  { \"name\": \"Acidente\", \"code\": \"ACIDENTE\" },\n  { \"name\": \"Agressão\", \"code\": \"AGRESSAO\" },\n  { \"name\": \"Assassinato\", \"code\": \"ASSASSINATO\" },\n  { \"name\": \"Atropelamento\", \"code\": \"ATROPELAMENTO\" },\n  { \"name\": \"Envenenamento\", \"code\": \"ENVENENAMENTO\" },\n  { \"name\": \"Maus Tratos\", \"code\": \"MAUS_TRATOS\" },\n  { \"name\": \"Outros\", \"code\": \"OUTROS\" }\n]\n",
   "topRow": 26,
   "type": "SELECT_WIDGET",
   "version": 1,
